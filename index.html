@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Computor v1</title>
+
+    <!-- twitter bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/animate.css@3.5.2/animate.min.css">
+
+    <script src="script.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Crimson+Text" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+
+</head>
+<body>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8 main-field animated fadeInUp">
+            <h1>Computer v1</h1>
+            <input id="equation" onkeyup="return check_input(this)"
+                   placeholder="9.3 * X^2 + 4 * X^1 + 1 * X^0 = 1 * X^0"
+            <br>
+            <input id="calc" type="button" value="Calculate!" onclick="calculate()">
+            <p>The answer is:
+                <span id="show" style="">
+                    <span class="more">more details</span>
+                    <span class="less" style="display:none">less details</span>
+                </span>
+            </p>
+            <p id="details_field">some details</p>
+            <p id="result_field">.</p>
+        </div>
+    </div>
+</div>
+<script>
+    $("#show").click(function() {
+        if ($('#details_field').css("display") == "none") {
+            $('#details_field').show(300);
+            $('.more').hide();
+            $('.less').show();
+        }
+        else {
+            $('#details_field').hide(300);
+            $('.less').hide();
+            $('.more').show();
+        }
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,90 @@
+* {
+    font-family: 'Lato', sans-serif !important;
+}
+input.koef-field {
+    width: 40px;
+    text-align: center;
+}
+body {
+    background: url(../img/bg.jpg) no-repeat;
+    background-size: cover;
+}
+p {
+    font-size: 22px;
+    color: #666;
+}
+
+p span {
+    color: #777;
+    font-size: 18px;
+}
+
+#show:hover {
+    cursor: pointer;
+}
+.more, .less {
+    text-decoration: underline;
+    margin-left: 20px;
+}
+.main-field {
+    border-top: 8px solid #fcc000;
+    background: #e8e8e8;
+    margin-top: 10%;
+
+}
+.main-field h1 {
+    color: #666666;
+    text-align: center;
+    padding: 10px;
+}
+#equation {
+    width: 100%;
+    font-size: 28px;
+    font-family: 'Crimson Text' !important;
+    color: #333333;
+    padding: 5px;
+}
+#equation:focus {
+    outline: none;
+}
+#calc {
+    display: block;
+    padding: 15px 25px;
+    font-size: 32px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: #fff;
+    background-color: #fcc000;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #999;
+
+    margin: 20px auto;
+
+}
+#calc:hover {
+    background-color: #fcc000;
+    opacity: .8;
+}
+#calc:active{
+    background-color: #fcc000;
+    opacity: .7;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
+#result_field {
+    background-color: #F8F8F8;
+    border: 1px solid #DDDDDD;
+    padding: 5px;
+    text-align: center;
+}
+
+#details_field {
+    border-left: 8px solid #fcc000;
+    margin-left: 20px;
+    padding: 10px;
+    font-size: 18px;
+    display: none;
+}
