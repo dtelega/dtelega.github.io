@@ -25,8 +25,26 @@
         <div class="col-md-2"></div>
         <div class="col-md-8 main-field animated fadeInUp">
             <h1>Computer v1</h1>
+            <div class="examples">
+                <p><span id="show-example">
+                    <span class="more less">examples:</span>
+                </span></p>
+
+                    <ul id="example_field" style="display:none" class="example-list">
+                        <li><a href="#" onclick="document.getElementById('equation').value = '42*X^0=42*X^0';">42 * X^0 = 42 * X^0</a></li>
+                        <li><a href="#" onclick="document.getElementById('equation').value = '5*X^0+4*X^1=4*X^0';">5 * X^0 + 4 * X^1 = 4 * X^0</a></li>
+                        <li><a href="#" onclick="document.getElementById('equation').value = '5*X^0+4*X^1-9.3*X^2=1*X^0';">5 * X^0 + 4 * X^1 - 9.3 * X^2 = 1 * X^0</a></li>
+
+                        <li><a href="#" onclick="document.getElementById('equation').value = '5*X^0+4*X^1-9.3*X^2=1*X^0';">5 * X^0 + 4 * X^1 - 9.3 * X^2 = 1 * X^0</a></li>
+                        <li><a href="#" onclick="document.getElementById('equation').value = '5*X^0+4*X^1-9.3*X^2=1*X^0';">5 * X^0 + 4 * X^1 - 9.3 * X^2 = 1 * X^0</a></li>
+                        <li><a href="#" onclick="document.getElementById('equation').value = '5*X^0+4*X^1-9.3*X^2=1*X^0';">5 * X^0 + 4 * X^1 - 9.3 * X^2 = 1 * X^0</a></li>
+                    </ul>
+
+            </div>
+
             <input id="equation" onkeyup="return check_input(this)"
                    placeholder="9.3 * X^2 + 4 * X^1 + 1 * X^0 = 1 * X^0"
+
             <br>
             <input id="calc" type="button" value="Calculate!" onclick="calculate()">
             <p>The answer is:
@@ -36,8 +54,8 @@
                 </span>
             </p>
             <p id="details_field">some details</p>
-            <p id="result_field">.</p>
-        </div>
+            <p id="result_field"></p>
+        </>
     </div>
 </div>
 <script>
@@ -51,6 +69,14 @@
             $('#details_field').hide(300);
             $('.less').hide();
             $('.more').show();
+        }
+    });
+    $("#show-example").click(function() {
+        if ($('#example_field').css("display") == "none") {
+            $('#example_field').show(300);
+        }
+        else {
+            $('#example_field').hide(300);
         }
     });
 </script>
