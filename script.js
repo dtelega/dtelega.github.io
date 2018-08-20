@@ -44,36 +44,60 @@ function calculate() {
         if (equation[i].indexOf("X^2")+1) {
             equation[i] = equation[i].replace("X^2", "");
             equation[i] = equation[i].replace("*", "");
-            a += Number(equation[i]);
-            !a ? a = 1 : 0;
+
+            if (!isNaN(Number(equation[i])) && Number(equation[i]) != 0)
+                a += Number(equation[i]);
+            else if (item === "-X^2") a += -1;
+            else if (Number(equation[i]) == 0) ;
+            else a += 1;
         }
         else if ((equation[i].indexOf("X^1") + 1)){
             equation[i] = equation[i].replace("X^1", "");
             equation[i] = equation[i].replace("*", "");
-            b += Number(equation[i]);
-            !b ? b = 1 : 0;
+
+            if (!isNaN(Number(equation[i])) && Number(equation[i]) != 0)
+                b += Number(equation[i]);
+            else if (item === "-X^1") b += -1;
+            else if (Number(equation[i]) == 0) ;
+            else b += 1;
         }
         else if ((equation[i].indexOf("X") + 1) && !(equation[i].indexOf("X^") + 1)) {
             equation[i] = equation[i].replace("X", "");
             equation[i] = equation[i].replace("*", "");
-            b += Number(equation[i]);
-            !b ? b = 1 : 0;
+
+            if (!isNaN(Number(equation[i])) && Number(equation[i]) != 0)
+                b += Number(equation[i]);
+            else if (item === "-X") b += -1;
+            else if (Number(equation[i]) == 0) ;
+            else b += 1;
         }
         else if (equation[i].indexOf("X^0") + 1){
             equation[i] = equation[i].replace("X^0", "");
             equation[i] = equation[i].replace("*", "");
-            c += Number(equation[i]);
-            !c ? c = 1 : 0;
+
+            if (!isNaN(Number(equation[i])) && Number(equation[i]) != 0)
+                c += Number(equation[i]);
+            else if (item === "-X^0") c += -1;
+            else if (Number(equation[i]) == 0) ;
+            else c += 1;
         }
         else if ((equation[i].indexOf("X^") + 1)){
-            alert("The polynomial degree is stricly greater than 2 ("+equation[i]+"), I can't solve.");
+     //       alert("The polynomial degree is stricly greater than 2 ("+equation[i]+"), I can't solve.");
+//            details = "The polynomial degree is stricly greater than 2 ("+equation[i]+"), I can't solve."
             err = 1;
         }
         else
             c += Number(equation[i]);
     });
     if (err === 1)
+    {
+        details = "The polynomial degree is stricly greater than 2, I can't solve.";
+        result = "The polynomial degree is stricly greater than 2, I can't solve.";
+        details_field.innerHTML = details;
+        result_field.innerHTML = result;
         return; //TODO: error msg
+    }
+
     details = "Reduced form: ";
     details += a+"*X<sup>2</sup> ";
     if (b >= 0)
@@ -133,9 +157,17 @@ function calculate() {
         details += "X = -c/b.<br>";
         result = "X = "+x1;
     }
-    else {
-        alert("X any number");
-        return false;
+    else if (c == 0){
+        console.log("X any number");
+        result = "X any number";
+
+        //return false;
+    }
+    else
+    {
+        //    a b  c
+        // if 0,0,!0
+        result = "No possible solution";
     }
 
     result_field.innerHTML = result;

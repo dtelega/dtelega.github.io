@@ -8,6 +8,7 @@ input.koef-field {
 body {
     background: url(../img/bg.jpg) no-repeat;
     background-size: cover;
+    height: 1200px;
 }
 p {
     font-size: 22px;
