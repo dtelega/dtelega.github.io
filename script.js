@@ -93,6 +93,7 @@ function calculate() {
     {
         details = "The polynomial degree is stricly greater than 2, I can't solve.";
         result = "The polynomial degree is stricly greater than 2, I can't solve.";
+        console.log("The polynomial degree is stricly greater than 2, I can't solve.");
         details_field.innerHTML = details;
         result_field.innerHTML = result;
         return; //TODO: error msg

@@ -42,9 +42,8 @@
 
             </div>
 
-            <input id="equation" onkeyup="return check_input(this)"
-                   placeholder="9.3 * X^2 + 4 * X^1 + 1 * X^0 = 1 * X^0"
-
+            <input id="equation" onkeyup="check_input(this)" onclick="check_input(this)"
+                   placeholder="9.3 * X^2 + 4 * X^1 + 1 * X^0 = 1 * X^0">
             <br>
             <input id="calc" type="button" value="Calculate!" onclick="calculate()">
             <p>The answer is:
