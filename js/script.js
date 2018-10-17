@@ -21,7 +21,7 @@ function calculate() {
     while (equation.indexOf("==") + 1)
         equation = equation.replace("==", "=");
     if (equation.search('=') === -1 || equation.search('X') === -1){
-        console.log("FAIL");
+        // console.log("FAIL");
         alert("Enter the correct equation");
         return;
     }
@@ -93,7 +93,7 @@ function calculate() {
     {
         details = "The polynomial degree is stricly greater than 2, I can't solve.";
         result = "The polynomial degree is stricly greater than 2, I can't solve.";
-        console.log("The polynomial degree is stricly greater than 2, I can't solve.");
+        // console.log("The polynomial degree is stricly greater than 2, I can't solve.");
         details_field.innerHTML = details;
         result_field.innerHTML = result;
         return; //TODO: error msg
@@ -107,7 +107,7 @@ function calculate() {
     if (c >= 0)
         details += "+ ";
     details += +c+" = 0;<br>";
-    console.log(a,b,c);
+    // console.log(a,b,c);
     details += "a = "+a+"; b = "+b+"; c = "+c+";<br>";
 
     var x1,x2;
@@ -115,7 +115,7 @@ function calculate() {
     if (a !== 0) {
         details += "2<br>";
         var D = (b*b) - (4*a*c);
-        console.log("D="+D);
+        // console.log("D="+D);
         details +="D = b<sup>2</sup> - 4*a*c ="+D+"<br>";
         if (D < 0) {
             details += "Discriminant is strictly negative, the two complex solutions are:<br>";
@@ -139,14 +139,14 @@ function calculate() {
             x2 = (-b + D**(0.5)) / (2*a);
             x2 = x2.toFixed(PREC);
             result = "X<sub>1</sub> = "+x1+"<br>X<sub>2</sub> = "+x2+"";
-            console.log("x1="+x1+";x2="+x2);
+            // console.log("x1="+x1+";x2="+x2);
         }
         else if (D === 0)
         {
             details += "Discriminant is 0, the solutions is:<br>";
             details += "X = -b/2a.<br>";
             x1 = ((-b) / (2*a));
-            console.log("x="+x1);
+            // console.log("x="+x1);
             result = "X = "+x1;
         }
     }
@@ -159,7 +159,7 @@ function calculate() {
         result = "X = "+x1;
     }
     else if (c == 0){
-        console.log("X any number");
+        // console.log("X any number");
         result = "X any number";
 
         //return false;
